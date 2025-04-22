@@ -15,6 +15,14 @@ fun main() {
     data()
     mostrarTiposDeDatos()
     calcularAreaRectangulo(305.2, 25.1)
+    val numero: Int = 24
+    if (esPar(numero)) {
+        println("$numero es par")
+    } else {
+        println("$numero es impar")
+    }
+    val signo: String = signo(numero)
+    println("$numero es $signo")
 }
 
 fun data() {
@@ -39,4 +47,19 @@ fun mostrarTiposDeDatos() {
 fun calcularAreaRectangulo(base: Double, altura: Double){
     val area = base * altura 
     println("Area: $area")
+}
+
+fun esPar(numero: Int): Boolean {
+    return when {
+        numero % 2 == 0 -> true
+        else -> false
+    }
+}
+
+fun signo(numero: Int): String{
+    return when{
+        numero < 0 -> "Negativo"
+        numero > 0 -> "Positivo"
+        else -> "Cero"
+    }
 }
