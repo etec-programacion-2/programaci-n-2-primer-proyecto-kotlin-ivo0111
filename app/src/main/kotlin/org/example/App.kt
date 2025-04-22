@@ -23,6 +23,8 @@ fun main() {
     }
     val signo: String = signo(numero)
     println("$numero es $signo")
+    mostrarNumerosConLoops()
+    mostrarNumerosParesConLoops()
 }
 
 fun data() {
@@ -62,4 +64,53 @@ fun signo(numero: Int): String{
         numero > 0 -> "Positivo"
         else -> "Cero"
     }
+}
+
+fun mostrarNumerosConLoops() {
+    // Usando for
+    println("Usando for:")
+    for (i in 1..10) {
+        println(i)
+    }
+    
+    // Usando while
+    println("\nUsando while:")
+    var j = 1
+    while (j <= 10) {
+        println(j)
+        j++
+    }
+    
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 1
+    do {
+        println(k)
+        k++
+    } while (k <= 10)
+}
+
+fun mostrarNumerosParesConLoops() {
+    // Usando for
+    println("Numeros pares del 2 al 20:")
+    println("\nUsando for:")
+    for (i in 2..20) {
+        if (i % 2 === 0) println(i)
+    }
+    
+    // Usando while
+    println("\nUsando while:")
+    var j = 2
+    while (j <= 20) {
+        if (j % 2 === 0) println(j)
+        j++
+    }
+    
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 2
+    do {
+        if (k % 2 === 0) println(k)
+        k++
+    } while (k <= 20)
 }
