@@ -11,11 +11,12 @@ class App {
 }
 
 fun main() {
+    val numero: Int = 24
+    val numeroParaFactorizar: Int = 5
     println("¡Hola, Kotlin!")
     data()
     mostrarTiposDeDatos()
     calcularAreaRectangulo(305.2, 25.1)
-    val numero: Int = 24
     if (esPar(numero)) {
         println("$numero es par")
     } else {
@@ -25,6 +26,7 @@ fun main() {
     println("$numero es $signo")
     mostrarNumerosConLoops()
     mostrarNumerosParesConLoops()
+    println("\nEl factorial de $numeroParaFactorizar es ${factorial(numeroParaFactorizar)}")
 }
 
 fun data() {
@@ -113,4 +115,12 @@ fun mostrarNumerosParesConLoops() {
         if (k % 2 === 0) println(k)
         k++
     } while (k <= 20)
+}
+
+fun factorial(n: Int): Int {
+    return if (n <= 1) 1 else n * factorial(n - 1)
+}
+
+fun saludar(receptor: String = "Quinteros", emisor: String = "Ivo") {
+    println("Hola $receptor, soy $emisor, ya casi estamos llegando al final de mi tarea")
 }
