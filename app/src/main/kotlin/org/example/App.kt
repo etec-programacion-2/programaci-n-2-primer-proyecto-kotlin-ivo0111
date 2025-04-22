@@ -13,6 +13,8 @@ class App {
 fun main() {
     val numero: Int = 24
     val numeroParaFactorizar: Int = 5
+    val base: Int = 3
+    val exponente: Int = 3 
     println("¡Hola, Kotlin!")
     data()
     mostrarTiposDeDatos()
@@ -27,6 +29,7 @@ fun main() {
     mostrarNumerosConLoops()
     mostrarNumerosParesConLoops()
     println("\nEl factorial de $numeroParaFactorizar es ${factorial(numeroParaFactorizar)}")
+    println("\n$base elevado a $exponente es ${potencia(base, exponente)}")
 }
 
 fun data() {
@@ -123,4 +126,12 @@ fun factorial(n: Int): Int {
 
 fun saludar(receptor: String = "Quinteros", emisor: String = "Ivo") {
     println("Hola $receptor, soy $emisor, ya casi estamos llegando al final de mi tarea")
+}
+
+fun potencia(base: Int, exponente: Int):Int{
+    var resultado: Int = 1
+    for (i in 1..exponente){
+        resultado = resultado * base
+    }
+    return resultado
 }
