@@ -13,6 +13,8 @@ class App {
 fun main() {
     println("¡Hola, Kotlin!")
     data()
+    mostrarTiposDeDatos()
+    calcularAreaRectangulo(305.2, 25.1)
 }
 
 fun data() {
@@ -20,4 +22,21 @@ fun data() {
     val fecha = "22/04/2025" 
     println("nombre: ${nombre}")
     println("fecha: ${fecha}")
+}
+
+fun mostrarTiposDeDatos() {
+    val cadena: String = "Esto es una cadena"
+    val entero: Int = 25
+    val decimal: Double = 1.75
+    val booleano: Boolean = true
+    
+    println("String: $cadena")
+    println("int: $entero")
+    println("double: $decimal")
+    println("booleano: $booleano")
+}
+
+fun calcularAreaRectangulo(base: Double, altura: Double){
+    val area = base * altura 
+    println("Area: $area")
 }
