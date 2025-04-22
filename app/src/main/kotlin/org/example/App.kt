@@ -30,6 +30,7 @@ fun main() {
     mostrarNumerosParesConLoops()
     println("\nEl factorial de $numeroParaFactorizar es ${factorial(numeroParaFactorizar)}")
     println("\n$base elevado a $exponente es ${potencia(base, exponente)}")
+    demostrarAlcanceVariables()
 }
 
 fun data() {
@@ -134,4 +135,32 @@ fun potencia(base: Int, exponente: Int):Int{
         resultado = resultado * base
     }
     return resultado
+}
+
+fun demostrarAlcanceVariables() {
+    // Variable local en el ámbito de la función
+    val variableGlobal = "Soy global en esta función"
+    
+    // Bloque if con su propio ámbito
+    if (true) {
+        val variableIf = "Soy local del if"
+        println("Dentro del if: $variableIf")
+        println("Puedo acceder a: $variableGlobal")
+    }
+    
+    // Bloque for con su propio ámbito
+    for (i in 1..3) {
+        val variableFor = "Soy local del for - iteración $i"
+        println("Dentro del for: $variableFor")
+        println("Puedo acceder a: $variableGlobal")
+    }
+    
+    // Intentar acceder a variables locales fuera de su ámbito
+    // println(variableIf)  // Esto daría error
+    // println(variableFor) // Esto daría error
+}
+
+fun sumarTodo(lista: List<Int>):Int{
+    val variableLocal = 10
+    println("")
 }
