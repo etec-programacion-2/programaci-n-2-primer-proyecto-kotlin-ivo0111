@@ -12,4 +12,12 @@ class App {
 
 fun main() {
     println("¡Hola, Kotlin!")
+    data()
+}
+
+fun data() {
+    val nombre = "Ivo" 
+    val fecha = "22/04/2025" 
+    println("nombre: ${nombre}")
+    println("fecha: ${fecha}")
 }
