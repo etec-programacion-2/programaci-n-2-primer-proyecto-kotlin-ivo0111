@@ -11,10 +11,12 @@ class App {
 }
 
 fun main() {
-    val numero: Int = 24
+    val listaNumeros: List<Int> = listOf(33,2,4,5,8,7)
+    /*val numero: Int = 24
     val numeroParaFactorizar: Int = 5
     val base: Int = 3
     val exponente: Int = 3 
+    val variableLocal: Int = 10
     println("¡Hola, Kotlin!")
     data()
     mostrarTiposDeDatos()
@@ -31,6 +33,11 @@ fun main() {
     println("\nEl factorial de $numeroParaFactorizar es ${factorial(numeroParaFactorizar)}")
     println("\n$base elevado a $exponente es ${potencia(base, exponente)}")
     demostrarAlcanceVariables()
+    println("\nEn la función Main, variableLocal vale $variableLocal")
+    alcanceVariableMain()*/
+    val numerosOrdenados = encontrarMaxMin(listaNumeros)
+    println("\nEl numero menor en $listaNumeros es ${numerosOrdenados[0]}")
+    println("\nEl numero mayor en $listaNumeros es ${numerosOrdenados[1]}")
 }
 
 fun data() {
@@ -160,7 +167,22 @@ fun demostrarAlcanceVariables() {
     // println(variableFor) // Esto daría error
 }
 
-fun sumarTodo(lista: List<Int>):Int{
-    val variableLocal = 10
-    println("")
+fun alcanceVariableMain() {
+    val variableLocal: Int = 5
+    println("En la función alcanceVariableMain, variableLocal vale $variableLocal")
+}
+
+fun encontrarMaxMin(numeros: List<Int>): List<Int> {
+    var min = numeros[0]
+    var max = numeros[0]
+    for (i in numeros){
+        if (i<min){
+            min = i
+        } else {
+            if (i>max){
+                max = i
+            }
+        }
+    }
+    return listOf(min, max)
 }
